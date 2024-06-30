@@ -12,10 +12,8 @@ import Auth from "./routes/auth";
 import RouteValidator from "./RouteValidator";
 import ProtectedRoute from "./ProtectedRoute";
 const config = {
-  signInRedirectURL:
-    "https://5c28e7c4-14b2-480e-81b4-1ff860776f9c.e1-us-east-azure.choreoapps.dev/home",
-  signOutRedirectURL:
-    "https://5c28e7c4-14b2-480e-81b4-1ff860776f9c.e1-us-east-azure.choreoapps.dev/home",
+  signInRedirectURL: "https://task-manager.choreoapps.dev/home",
+  signOutRedirectURL: "https://task-manager.choreoapps.dev/home",
   clientID: "6odRhSMOpfdEfpTXaaZml7xG6Eca",
   baseUrl: "https://api.asgardeo.io/t/org2sdbq",
   scope: ["openid", "profile"],
