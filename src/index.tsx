@@ -1,19 +1,40 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { AuthProvider } from "@asgardeo/auth-react";
+import "./index.css";
+import "@fontsource/manrope/400.css";
+import "@fontsource/manrope/500.css";
+import "@fontsource/manrope/700.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Root from "./routes/root";
+import Layout from "./routes/layout";
+import Auth from "./routes/auth";
+import RouteValidator from "./RouteValidator";
+import ProtectedRoute from "./ProtectedRoute";
+const config = {
+  signInRedirectURL: "http://localhost:3000/home",
+  signOutRedirectURL: "http://localhost:3000/home",
+  clientID: "6odRhSMOpfdEfpTXaaZml7xG6Eca",
+  baseUrl: "https://api.asgardeo.io/t/org2sdbq",
+  scope: ["openid", "profile"],
+};
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <AuthProvider config={config}>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<RouteValidator />} />
+            <Route element={<ProtectedRoute />}>
+              <Route path="home" element={<Root />} />
+            </Route>
+          </Route>
+        </Routes>
+      </AuthProvider>
+    </Router>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

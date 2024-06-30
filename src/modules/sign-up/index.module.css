@@ -1,0 +1,6 @@
+.inputContainer {
+  margin: 20px 0;
+}
+.inputContainer:not(1) {
+  margin-top: 40px;
+}

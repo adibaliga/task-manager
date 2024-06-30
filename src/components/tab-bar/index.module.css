@@ -1,0 +1,28 @@
+.tabBarContainer {
+  width: 100%;
+}
+.tabBar {
+  display: flex;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  color: var(--font-color);
+  font-weight: bold;
+}
+
+.tab:last-child {
+  border-right: none;
+}
+
+.tab.active {
+  border-bottom: 3px solid var(--secondary-color);
+  color: var(--secondary-font-color);
+}
+
+.content {
+  padding: 20px;
+  background-color: #fff;
+}

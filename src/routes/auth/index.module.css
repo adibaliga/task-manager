@@ -1,0 +1,20 @@
+.tabContainer {
+  padding-top: 10px;
+}
+.auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 350px;
+}
+.authHeader {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 28px;
+}
+.authHeader2 {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 24px;
+}
